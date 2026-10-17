@@ -2,1104 +2,613 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#07110e">
-  <meta name="description" content="VISTOX Capital Markets — Learn stock market fundamentals, technical analysis, trading risk management and digital asset concepts through structured financial education.">
-  <meta name="keywords" content="stock market education, trading course, technical analysis, crypto education, risk management, VISTOX Capital Markets">
-  <meta property="og:title" content="VISTOX Capital Markets | Learn. Analyse. Grow.">
-  <meta property="og:description" content="Build market knowledge with structured trading education and risk management.">
-  <meta property="og:type" content="website">
-  <title>VISTOX Capital Markets | Learn. Analyse. Grow.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080D1C">
+<meta name="description" content="VISTOX Capital Markets — Financial market education, technical analysis, stock market fundamentals, digital asset learning and risk awareness.">
+<title>VISTOX Capital Markets | Market Knowledge. Built With Discipline.</title>
 
-  <style>
-    :root {
-      --bg: #07110e;
-      --panel: #0d1b16;
-      --panel2: #11231b;
-      --green: #54e5a1;
-      --green2: #b0ffd4;
-      --text: #f2f7f4;
-      --muted: #a1b2a8;
-      --line: rgba(255,255,255,.10);
-      --red: #ff7777;
-      --radius: 18px;
-    }
+<style>
+:root{
+  --bg:#080D1C;
+  --surface:#101729;
+  --surface2:#151D31;
+  --red:#E64553;
+  --wine:#8F1D2C;
+  --white:#F6F5F7;
+  --muted:#A8B0C2;
+  --line:rgba(255,255,255,.10);
+  --radius:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{
+  background:var(--bg);color:var(--white);
+  font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  line-height:1.7;overflow-x:hidden
+}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.container{width:min(1160px,91%);margin:auto}
+.section{padding:94px 0}
+.muted{color:var(--muted)}
+.red{color:var(--red)}
+.eyebrow{
+  color:#F0757D;font-size:11px;font-weight:800;
+  letter-spacing:2.5px;text-transform:uppercase;
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:19px
+}
+.eyebrow:before{content:"";width:23px;height:1px;background:var(--red)}
+h1,h2,h3{line-height:1.18;letter-spacing:-.8px}
+h1{font-size:clamp(43px,6.2vw,75px);font-weight:760}
+h2{font-size:clamp(30px,4vw,46px);font-weight:700}
+h3{font-size:21px}
+p{color:var(--muted)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:10px;padding:13px 20px;border-radius:5px;
+  font-size:13px;font-weight:750;border:1px solid transparent;
+  transition:.2s
+}
+.primary{background:var(--red);color:white}
+.primary:hover{background:#f35b68;transform:translateY(-2px)}
+.outline{border-color:rgba(255,255,255,.25);color:white}
+.outline:hover{border-color:var(--red);color:#ff9299}
+.small{padding:10px 14px}
+.full{width:100%}
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+/* HEADER */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(8,13,28,.94);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--line)
+}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{display:flex;align-items:center;gap:12px;flex-shrink:0}
+.logo{
+  width:43px;height:43px;display:grid;place-items:center;
+  border:1px solid rgba(230,69,83,.65);
+  background:linear-gradient(145deg,#8F1D2C,#341522);
+  font-size:24px;font-weight:900;transform:skew(-4deg)
+}
+.brand-name{font-weight:900;letter-spacing:2px;font-size:17px}
+.brand-sub{display:block;font-size:9px;letter-spacing:3px;color:#C2C7D3}
+.links{display:flex;align-items:center;gap:25px}
+.links a{font-size:12px;color:#C1C6D4;transition:.2s}
+.links a:hover{color:#F0757D}
+.menu{display:none;background:transparent;color:white;border:1px solid var(--line);padding:8px 12px;border-radius:5px;font-size:20px}
 
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+/* HERO */
+.hero{
+  position:relative;overflow:hidden;padding:100px 0 72px;
+  background:
+  radial-gradient(ellipse at 78% 42%,rgba(143,29,44,.20),transparent 39%),
+  radial-gradient(ellipse at 0% 90%,rgba(53,67,109,.13),transparent 36%)
+}
+.hero:after{
+  content:"";position:absolute;width:480px;height:480px;
+  border:1px solid rgba(230,69,83,.12);border-radius:50%;
+  right:-250px;top:20px;box-shadow:0 0 0 55px rgba(230,69,83,.025),0 0 0 110px rgba(230,69,83,.018);
+  pointer-events:none
+}
+.hero-grid{display:grid;grid-template-columns:1.03fr .97fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero h1 span{color:#F0757D}
+.hero-copy>p{font-size:16px;max-width:550px;margin:23px 0 29px}
+.actions{display:flex;gap:13px;flex-wrap:wrap}
+.trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;font-size:11px;color:#C0C7D5}
+.trust span:before{content:"✦";color:var(--red);margin-right:7px}
+.market{
+  padding:25px;border:1px solid rgba(255,255,255,.12);
+  background:linear-gradient(145deg,rgba(22,29,49,.97),rgba(12,17,33,.98));
+  border-radius:13px;box-shadow:0 30px 80px rgba(0,0,0,.27)
+}
+.market-head{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.market-label{font-size:11px;letter-spacing:1.5px;font-weight:800}
+.demo{font-size:9px;letter-spacing:1px;color:#F18B93;border:1px solid #74313E;padding:5px 8px}
+.chart-title{font-size:27px;font-weight:750;margin-top:26px}
+.chart-sub{font-size:11px}
+.chart{width:100%;display:block;margin:20px 0 5px}
+.legend{display:flex;justify-content:space-between;font-size:10px;color:var(--muted)}
+.chart-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:23px}
+.chart-stat{padding:12px 10px;background:rgba(255,255,255,.035);border:1px solid var(--line)}
+.chart-stat span{display:block;font-size:10px;color:var(--muted)}
+.chart-stat strong{font-size:12px;display:block;margin-top:4px}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
-      overflow-x: hidden;
-    }
+/* VALUE STRIP */
+.strip{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);background:var(--surface)}
+.strip>div{padding:23px;border-right:1px solid var(--line)}
+.strip>div:last-child{border:0}
+.strip strong{display:block;font-size:13px}
+.strip span{font-size:11px;color:var(--muted)}
 
-    a { color: inherit; text-decoration: none; }
-    button, input, select, textarea { font: inherit; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    button { cursor: pointer; }
-    img, svg { max-width: 100%; }
+/* SECTIONS */
+.head{max-width:700px;margin-bottom:42px}
+.head h2{margin-bottom:15px}
+.head p{font-size:14px;max-width:600px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}
+.card{
+  padding:27px;background:linear-gradient(145deg,#131B2E,#0D1425);
+  border:1px solid var(--line);border-radius:var(--radius);
+  transition:transform .25s,border-color .25s
+}
+.card:hover{transform:translateY(-5px);border-color:rgba(230,69,83,.55)}
+.icon{
+  display:grid;place-items:center;width:47px;height:47px;
+  background:rgba(230,69,83,.09);border:1px solid rgba(230,69,83,.25);
+  color:#F0757D;border-radius:8px;font-size:21px;margin-bottom:22px
+}
+.card h3{font-size:19px}
+.card p{font-size:13px;margin-top:12px}
+.arrow{display:inline-block;color:#F0757D;font-size:12px;font-weight:800;margin-top:19px}
+.dark-section{background:#0B1120;border-block:1px solid var(--line)}
+.tag{font-size:10px;letter-spacing:1px;color:#F0757D;border:1px solid rgba(230,69,83,.32);padding:5px 9px}
+.course-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;gap:8px}
+.level{font-size:10px;color:var(--muted)}
+.course-meta{font-size:11px;color:var(--muted);margin:18px 0}
+.course-card{display:flex;flex-direction:column}
+.course-card .btn{margin-top:auto}
+.notice{padding:17px;border:1px solid var(--line);margin-top:24px;font-size:11px;color:var(--muted)}
 
-    .container { width: min(1160px, 91%); margin: auto; }
-    .section { padding: 95px 0; }
-    .muted { color: var(--muted); }
-    .green { color: var(--green); }
+/* LEARNING PROCESS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.step{border-top:2px solid var(--wine);padding:22px;background:linear-gradient(180deg,rgba(143,29,44,.08),transparent)}
+.step-no{font-size:11px;letter-spacing:2px;color:#F0757D;font-weight:800}
+.step h3{font-size:17px;margin:15px 0 10px}
+.step p{font-size:12px}
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      color: var(--green);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-size: 11px;
-      font-weight: 800;
-      margin-bottom: 16px;
-    }
+/* RISK */
+.risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start}
+.risk-copy p{font-size:14px;margin-top:18px}
+.risk-list{list-style:none;margin-top:23px}
+.risk-list li{font-size:13px;color:#D2D6E0;padding:9px 0}
+.risk-list li:before{content:"✓";color:#F0757D;margin-right:11px}
+.risk-box{padding:27px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+.risk-box h3{margin-bottom:15px}
+.risk-row{display:flex;justify-content:space-between;gap:15px;padding:14px 0;border-bottom:1px solid var(--line);font-size:12px}
+.risk-row:last-of-type{border:0}
+.risk-row span{color:var(--muted)}
+.risk-row strong{text-align:right}
 
-    .eyebrow::before {
-      content: "";
-      width: 20px;
-      height: 2px;
-      background: var(--green);
-    }
+/* FAQ */
+.faq{max-width:800px;margin:auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.question{width:100%;background:none;border:0;color:white;text-align:left;padding:22px 0;display:flex;justify-content:space-between;gap:20px;font-weight:700}
+.question span:last-child{color:#F0757D;font-size:22px}
+.answer{display:none;padding:0 30px 22px 0;font-size:13px}
+.faq-item.open .answer{display:block}
+.faq-item.open .question span:last-child{transform:rotate(45deg)}
 
-    h1, h2, h3 { line-height: 1.15; letter-spacing: -.8px; }
-    h1 { font-size: clamp(42px, 6.4vw, 76px); }
-    h2 { font-size: clamp(30px, 4vw, 46px); }
-    h3 { font-size: 21px; }
-    p { color: var(--muted); }
-    .section-head { max-width: 690px; margin-bottom: 42px; }
-    .section-head h2 { margin-bottom: 16px; }
-    .section-head p { max-width: 590px; }
+/* CONTACT */
+.contact{display:grid;grid-template-columns:.85fr 1.15fr;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.contact-info{padding:39px;background:linear-gradient(145deg,#241523,#12182B)}
+.contact-info h2{font-size:35px}
+.contact-info>p{font-size:13px;margin-top:15px}
+.contact-point{margin-top:23px}
+.contact-point strong{display:block;font-size:13px}
+.contact-point span{font-size:12px;color:var(--muted)}
+.contact-form{padding:36px}
+.contact-form h3{margin-bottom:22px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px;min-width:0}
+.field.full{grid-column:1/-1}
+.field label{font-size:11px;color:#D8DCE5}
+.field input,.field select,.field textarea{
+  width:100%;min-width:0;background:#090F1D;color:white;
+  border:1px solid rgba(255,255,255,.14);border-radius:5px;
+  padding:12px;outline:none
+}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--red)}
+.field textarea{min-height:95px;resize:vertical}
+.help{font-size:10px;margin-top:12px}
+.toast{display:none;font-size:12px;color:#F18B93;margin-top:12px}
 
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 13px 20px;
-      border: 1px solid transparent;
-      border-radius: 9px;
-      font-weight: 750;
-      font-size: 14px;
-      transition: .2s ease;
-    }
+/* CTA / FOOTER */
+.cta{
+  text-align:center;padding:62px 25px;border:1px solid rgba(230,69,83,.3);
+  background:radial-gradient(ellipse at top,rgba(143,29,44,.2),transparent 68%),#101729
+}
+.cta h2{max-width:700px;margin:0 auto 15px}
+.cta p{max-width:600px;margin:0 auto 24px;font-size:13px}
+footer{background:#060A14;border-top:1px solid var(--line);padding:45px 0 22px}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}
+.footer-about p{font-size:12px;margin-top:17px;max-width:290px}
+.footer-col h4{font-size:12px;margin-bottom:14px}
+.footer-col a{display:block;color:var(--muted);font-size:11px;margin:10px 0}
+.footer-col a:hover{color:#F0757D}
+.disclaimer{border:1px solid var(--line);padding:16px;margin-top:28px;font-size:10px;color:#929BAE}
+.disclaimer strong{color:#D9DDE6}
+.bottom{border-top:1px solid var(--line);margin-top:25px;padding-top:20px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.bottom p{font-size:10px}
+.wa{
+  position:fixed;bottom:20px;right:20px;z-index:50;
+  width:49px;height:49px;display:grid;place-items:center;
+  border-radius:50%;background:#25C879;color:#07130D;font-size:12px;font-weight:900;
+  box-shadow:0 5px 25px #0007
+}
 
-    .btn-primary { background: var(--green); color: #062016; }
-    .btn-primary:hover { background: var(--green2); transform: translateY(-2px); }
-    .btn-outline { border-color: rgba(255,255,255,.2); background: transparent; color: var(--text); }
-    .btn-outline:hover { border-color: var(--green); color: var(--green); }
-    .btn-small { padding: 9px 13px; font-size: 12px; }
-    .full-width { width: 100%; }
-
-    /* Navigation */
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: rgba(7,17,14,.92);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-inner {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand { display: flex; align-items: center; gap: 11px; flex-shrink: 0; }
-
-    .brand-mark {
-      display: grid;
-      place-items: center;
-      width: 43px;
-      height: 43px;
-      border-radius: 12px;
-      color: var(--green);
-      background: linear-gradient(135deg, #183b2b, #10241b);
-      border: 1px solid rgba(84,229,161,.32);
-      font-weight: 950;
-      font-size: 21px;
-    }
-
-    .brand-name { font-size: 17px; font-weight: 900; letter-spacing: 1.5px; }
-    .brand-sub { display: block; color: var(--muted); font-size: 9px; letter-spacing: 2px; }
-
-    .nav-links { display: flex; align-items: center; gap: 25px; }
-    .nav-links a { color: #c2cec6; font-size: 13px; font-weight: 600; }
-    .nav-links a:hover { color: var(--green); }
-    .nav-actions { display: flex; align-items: center; gap: 12px; }
-
-    .menu-toggle {
-      display: none;
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--line);
-      border-radius: 9px;
-      background: var(--panel);
-      color: white;
-      font-size: 22px;
-    }
-
-    /* Hero */
-    .hero {
-      position: relative;
-      padding: 94px 0 75px;
-      overflow: hidden;
-      background:
-        radial-gradient(ellipse at 78% 30%, rgba(38,130,82,.16), transparent 37%),
-        radial-gradient(ellipse at 8% 80%, rgba(33,90,63,.12), transparent 36%);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      right: -240px;
-      top: 30px;
-      border: 1px solid rgba(84,229,161,.10);
-      border-radius: 50%;
-      box-shadow: 0 0 0 50px rgba(84,229,161,.025), 0 0 0 100px rgba(84,229,161,.02);
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.06fr .94fr;
-      align-items: center;
-      gap: 60px;
-      position: relative;
-    }
-
-    .hero h1 span { color: var(--green); }
-    .hero-copy > p { font-size: 17px; max-width: 565px; margin: 24px 0 29px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 13px; }
-
-    .trust-line {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 19px;
-      margin-top: 31px;
-      color: #c1d1c6;
-      font-size: 12px;
-    }
-
-    .trust-line span::before { content: "✓"; color: var(--green); margin-right: 7px; font-weight: 900; }
-
-    .market-panel {
-      position: relative;
-      border: 1px solid rgba(255,255,255,.13);
-      background: linear-gradient(145deg, rgba(18,39,29,.97), rgba(9,21,16,.98));
-      padding: 23px;
-      border-radius: 22px;
-      box-shadow: 0 25px 80px rgba(0,0,0,.26);
-    }
-
-    .panel-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 22px; }
-    .panel-label { font-size: 12px; font-weight: 800; }
-    .demo-tag { color: var(--green); font-size: 10px; background: rgba(84,229,161,.09); border-radius: 5px; padding: 5px 8px; }
-    .chart-title { font-size: 29px; font-weight: 850; }
-    .chart-caption { font-size: 11px; margin-top: 3px; }
-    .chart-area { margin: 17px 0 20px; overflow: hidden; }
-    .chart-area svg { display: block; width: 100%; height: auto; }
-    .chart-legend { display: flex; justify-content: space-between; font-size: 10px; color: var(--muted); margin-top: 5px; }
-
-    .chart-bottom { display: grid; grid-template-columns: repeat(3, 1fr); gap: 9px; }
-    .chart-stat { background: rgba(255,255,255,.035); border: 1px solid var(--line); border-radius: 10px; padding: 12px; }
-    .chart-stat span { display: block; font-size: 10px; color: var(--muted); }
-    .chart-stat strong { display: block; margin-top: 5px; font-size: 13px; }
-
-    /* General cards */
-    .stats-strip {
-      display: grid;
-      grid-template-columns: repeat(4,1fr);
-      border: 1px solid var(--line);
-      background: var(--panel);
-      border-radius: 14px;
-      margin-top: 25px;
-    }
-
-    .strip-item { padding: 23px; border-right: 1px solid var(--line); }
-    .strip-item:last-child { border: 0; }
-    .strip-item strong { display: block; font-size: 15px; }
-    .strip-item span { font-size: 12px; color: var(--muted); }
-
-    .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
-
-    .card {
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, #102119, #0b1712);
-      border-radius: var(--radius);
-      padding: 26px;
-      transition: border-color .2s, transform .2s;
-    }
-
-    .card:hover { border-color: rgba(84,229,161,.42); transform: translateY(-4px); }
-    .card p { font-size: 14px; margin-top: 12px; }
-    .icon-box { display: grid; place-items: center; width: 49px; height: 49px; border-radius: 13px; background: rgba(84,229,161,.09); border: 1px solid rgba(84,229,161,.18); font-size: 23px; margin-bottom: 22px; }
-    .card h3 { font-size: 19px; }
-
-    .card-link { display: inline-block; margin-top: 20px; color: var(--green); font-weight: 800; font-size: 13px; }
-    .card-link:hover { color: var(--green2); }
-
-    /* Courses */
-    .courses-bg { background: #091510; border-block: 1px solid var(--line); }
-    .course-card { display: flex; flex-direction: column; }
-    .course-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 19px; }
-    .course-tag { font-size: 10px; color: var(--green); border: 1px solid rgba(84,229,161,.25); padding: 5px 9px; border-radius: 5px; }
-    .course-level { font-size: 11px; color: var(--muted); }
-    .course-card h3 { margin-bottom: 5px; }
-    .course-meta { display: flex; flex-wrap: wrap; gap: 13px; font-size: 11px; color: var(--muted); margin: 18px 0; }
-    .course-card .btn { margin-top: auto; }
-    .course-note { margin-top: 25px; padding: 17px 20px; border: 1px solid var(--line); border-radius: 10px; font-size: 12px; }
-
-    /* Learning process */
-    .steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
-    .step { padding: 22px 20px; border-top: 1px solid rgba(84,229,161,.5); background: linear-gradient(180deg, rgba(84,229,161,.06), transparent); }
-    .step-num { color: var(--green); font-size: 12px; font-weight: 900; letter-spacing: 1px; }
-    .step h3 { font-size: 17px; margin: 16px 0 10px; }
-    .step p { font-size: 13px; }
-
-    /* Risk management */
-    .risk-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 45px; align-items: start; }
-    .risk-copy p { margin: 20px 0; }
-    .risk-list { list-style: none; display: grid; gap: 12px; margin-top: 25px; }
-    .risk-list li { color: #d3dfd7; font-size: 14px; }
-    .risk-list li::before { content: "✓"; color: var(--green); font-weight: 900; margin-right: 10px; }
-
-    .risk-box { padding: 30px; border-radius: 17px; border: 1px solid var(--line); background: var(--panel); }
-    .risk-box h3 { margin-bottom: 20px; }
-    .risk-row { display: flex; justify-content: space-between; gap: 15px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
-    .risk-row:last-child { border-bottom: 0; }
-    .risk-row span { color: var(--muted); }
-    .risk-row strong { text-align: right; }
-
-    /* Resources */
-    .resource-card { min-height: 220px; }
-    .resource-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--green); margin-bottom: 17px; }
-    .resource-card h3 { line-height: 1.35; }
-
-    /* FAQ */
-    .faq-wrap { max-width: 820px; margin: auto; }
-    .faq-item { border-bottom: 1px solid var(--line); }
-    .faq-question { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 20px; text-align: left; border: 0; background: none; color: var(--text); padding: 22px 0; font-weight: 750; }
-    .faq-question span:last-child { color: var(--green); font-size: 22px; }
-    .faq-answer { display: none; padding: 0 30px 22px 0; font-size: 14px; }
-    .faq-item.open .faq-answer { display: block; }
-    .faq-item.open .faq-question span:last-child { transform: rotate(45deg); }
-
-    /* Contact */
-    .contact-box {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      border: 1px solid rgba(84,229,161,.19);
-      border-radius: 22px;
-      overflow: hidden;
-      background: var(--panel);
-    }
-
-    .contact-info { padding: 42px; background: linear-gradient(145deg, #132c20, #0c1a13); }
-    .contact-info h2 { font-size: 35px; }
-    .contact-info > p { margin: 17px 0 28px; font-size: 14px; }
-    .contact-point { margin: 20px 0; }
-    .contact-point strong { display: block; font-size: 13px; }
-    .contact-point span { color: var(--muted); font-size: 12px; }
-    .contact-form { padding: 40px; }
-    .contact-form h3 { margin-bottom: 23px; }
-
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; }
-    .field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 17px; }
-    .field.full { grid-column: 1 / -1; }
-    .field label { font-size: 12px; color: #d3dfd7; font-weight: 700; }
-    .field input, .field select, .field textarea {
-      width: 100%;
-      min-width: 0;
-      border: 1px solid rgba(255,255,255,.14);
-      background: #08120e;
-      border-radius: 8px;
-      padding: 12px 13px;
-      color: white;
-      outline: none;
-    }
-
-    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--green); }
-    .field textarea { resize: vertical; min-height: 100px; }
-    .field select option { background: #0b1712; }
-    .form-help { font-size: 11px; margin-top: 12px; }
-
-    /* CTA */
-    .cta {
-      text-align: center;
-      padding: 65px 25px;
-      border-radius: 20px;
-      border: 1px solid rgba(84,229,161,.2);
-      background: radial-gradient(ellipse at top, rgba(84,229,161,.10), transparent 70%), #0b1712;
-    }
-
-    .cta h2 { max-width: 680px; margin: 0 auto 16px; }
-    .cta p { max-width: 590px; margin: 0 auto 25px; }
-
-    /* Footer */
-    footer { border-top: 1px solid var(--line); background: #060d0a; padding: 45px 0 25px; }
-    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 35px; }
-    .footer-about p { max-width: 300px; font-size: 12px; margin-top: 17px; }
-    .footer-col h4 { font-size: 12px; margin-bottom: 15px; }
-    .footer-col a { display: block; font-size: 12px; color: var(--muted); margin: 10px 0; }
-    .footer-col a:hover { color: var(--green); }
-    .footer-bottom { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-    .footer-bottom p { font-size: 10px; }
-
-    .disclaimer { margin-top: 22px; padding: 16px; border: 1px solid var(--line); border-radius: 9px; font-size: 11px; color: #9eaea4; }
-    .disclaimer strong { color: #d5e2da; }
-
-    .whatsapp {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 900;
-      display: grid;
-      place-items: center;
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      background: #20c878;
-      color: #042516;
-      font-weight: 950;
-      font-size: 13px;
-      box-shadow: 0 8px 30px rgba(0,0,0,.3);
-    }
-
-    .whatsapp:hover { transform: translateY(-3px); }
-
-    .toast {
-      display: none;
-      padding: 12px;
-      margin-top: 14px;
-      border: 1px solid rgba(84,229,161,.3);
-      border-radius: 8px;
-      font-size: 12px;
-      color: var(--green);
-    }
-
-    @media (max-width: 1000px) {
-      .nav-links { gap: 14px; }
-      .nav-links a { font-size: 12px; }
-      .hero-grid { gap: 30px; }
-      .grid-3 { grid-template-columns: repeat(2,1fr); }
-      .footer-grid { grid-template-columns: repeat(2,1fr); }
-    }
-
-    @media (max-width: 760px) {
-      .section { padding: 68px 0; }
-      .nav-inner { min-height: 68px; }
-      .menu-toggle { display: block; }
-      .nav-actions > .btn { display: none; }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 68px;
-        left: 0;
-        right: 0;
-        padding: 20px 5%;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-        background: #09140f;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 13px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
-      .hero { padding: 65px 0 45px; }
-      .hero-grid, .risk-layout, .contact-box { grid-template-columns: 1fr; }
-      .hero-grid { gap: 38px; }
-      .hero-copy > p { font-size: 15px; }
-      .market-panel { padding: 18px; }
-      .stats-strip { grid-template-columns: repeat(2,1fr); }
-      .strip-item:nth-child(2) { border-right: 0; }
-      .strip-item:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
-      .steps { grid-template-columns: repeat(2,1fr); }
-      .contact-info, .contact-form { padding: 28px 23px; }
-      .risk-layout { gap: 25px; }
-      .footer-grid { gap: 25px; }
-    }
-
-    @media (max-width: 480px) {
-      .container { width: 90%; }
-      h1 { font-size: 43px; }
-      h2 { font-size: 31px; }
-      .brand-name { font-size: 14px; }
-      .brand-mark { width: 39px; height: 39px; }
-      .grid-3, .steps, .form-grid { grid-template-columns: 1fr; }
-      .field.full { grid-column: auto; }
-      .card { padding: 22px; }
-      .chart-stat { padding: 9px; }
-      .chart-stat strong { font-size: 11px; }
-      .footer-grid { grid-template-columns: 1fr 1fr; }
-      .contact-info h2 { font-size: 30px; }
-      .whatsapp { width: 48px; height: 48px; right: 14px; bottom: 14px; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
-    }
-  </style>
+@media(max-width:980px){
+  .links{gap:13px}
+  .links a{font-size:11px}
+  .hero-grid{gap:30px}
+  .grid3{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:740px){
+  .section{padding:68px 0}
+  .nav{height:70px}
+  .menu{display:block}
+  .nav>.links{
+    display:none;position:absolute;top:70px;left:0;right:0;
+    padding:15px 5%;background:#0A1020;border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:stretch;gap:0
+  }
+  .nav>.links.open{display:flex}
+  .nav>.links a{padding:12px 0;border-bottom:1px solid var(--line);font-size:13px}
+  .nav>.btn{display:none}
+  .hero{padding:66px 0 45px}
+  .hero-grid,.risk-grid,.contact{grid-template-columns:1fr}
+  .hero-grid{gap:38px}
+  .strip{grid-template-columns:repeat(2,1fr)}
+  .strip>div:nth-child(2){border-right:0}
+  .strip>div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .contact-info,.contact-form{padding:27px 22px}
+}
+@media(max-width:480px){
+  .brand-name{font-size:14px}
+  .brand-sub{font-size:8px}
+  .logo{width:39px;height:39px}
+  h1{font-size:44px}
+  .grid3,.steps,.form-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .market{padding:17px}
+  .chart-stat{padding:8px}
+  .chart-stat strong{font-size:10px}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;transition:none!important}
+}
+</style>
 </head>
 
 <body>
-  <!-- Replace sample contact details before publishing. -->
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <span class="logo">V</span>
+      <span><span class="brand-name">VISTOX</span><span class="brand-sub">CAPITAL MARKETS</span></span>
+    </a>
+    <nav class="links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#markets">Markets</a>
+      <a href="#courses">Education</a>
+      <a href="#insights">Insights</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn primary small" href="#contact">Get Started ↗</a>
+    <button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false">☰</button>
+  </div>
+</header>
 
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="VISTOX Capital Markets home">
-        <span class="brand-mark">V</span>
-        <span>
-          <span class="brand-name">VISTOX</span>
-          <span class="brand-sub">CAPITAL MARKETS</span>
-        </span>
-      </a>
-
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#markets">Markets</a>
-        <a href="#courses">Courses</a>
-        <a href="#resources">Resources</a>
-        <a href="#faq">FAQs</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="nav-actions">
-        <a href="#contact" class="btn btn-primary btn-small">Explore Learning ↗</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Market Knowledge. Built With Discipline.</span>
+      <h1>Clarity in every <span>market move.</span></h1>
+      <p>Explore financial markets through structured education, analytical thinking and a disciplined approach to risk. Build knowledge before making decisions.</p>
+      <div class="actions">
+        <a class="btn primary" href="#courses">Explore Education ↗</a>
+        <a class="btn outline" href="#about">Our Approach</a>
+      </div>
+      <div class="trust">
+        <span>Market Education</span><span>Analytical Skills</span><span>Risk Awareness</span>
       </div>
     </div>
-  </header>
 
-  <main>
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <span class="eyebrow">Your Market Learning Journey</span>
-          <h1>Learn Markets.<br>Think <span>Smarter.</span><br>Manage Risk.</h1>
-          <p>
-            Build a stronger understanding of financial markets with structured
-            education in stocks, technical analysis, trading discipline and
-            digital assets.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#courses">Explore Courses ↗</a>
-            <a class="btn btn-outline" href="#about">Discover VISTOX</a>
-          </div>
-
-          <div class="trust-line">
-            <span>Structured learning</span>
-            <span>Risk awareness</span>
-            <span>Beginner friendly</span>
-          </div>
-        </div>
-
-        <div class="market-panel">
-          <div class="panel-top">
-            <div>
-              <div class="panel-label">MARKET LEARNING DESK</div>
-              <div class="chart-caption">Illustrative chart for educational purposes</div>
-            </div>
-            <span class="demo-tag">DEMO DATA</span>
-          </div>
-
-          <div class="chart-title">Price Action</div>
-          <div class="chart-caption">A visual example of market movement</div>
-
-          <div class="chart-area">
-            <svg viewBox="0 0 500 245" role="img" aria-label="Illustrative rising and falling price line, not live market data">
-              <defs>
-                <linearGradient id="chartFill" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="0%" stop-color="#54e5a1" stop-opacity=".25"/>
-                  <stop offset="100%" stop-color="#54e5a1" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <g stroke="#ffffff" stroke-opacity=".08" stroke-width="1">
-                <path d="M0 35 H500 M0 80 H500 M0 125 H500 M0 170 H500 M0 215 H500"/>
-                <path d="M60 0 V245 M140 0 V245 M220 0 V245 M300 0 V245 M380 0 V245 M460 0 V245"/>
-              </g>
-              <path d="M0 185 L35 165 L68 177 L100 128 L132 144 L165 105 L195 122 L225 77 L257 97 L290 54 L322 79 L353 43 L386 65 L418 30 L450 49 L480 18 L500 27 L500 245 L0 245 Z" fill="url(#chartFill)"/>
-              <path d="M0 185 L35 165 L68 177 L100 128 L132 144 L165 105 L195 122 L225 77 L257 97 L290 54 L322 79 L353 43 L386 65 L418 30 L450 49 L480 18 L500 27" fill="none" stroke="#54e5a1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="480" cy="18" r="5" fill="#54e5a1"/>
-              <circle cx="480" cy="18" r="10" fill="#54e5a1" opacity=".15"/>
-            </svg>
-            <div class="chart-legend"><span>Illustrative history</span><span>Not real-time data</span></div>
-          </div>
-
-          <div class="chart-bottom">
-            <div class="chart-stat"><span>Learn</span><strong>Market Basics</strong></div>
-            <div class="chart-stat"><span>Understand</span><strong>Price Action</strong></div>
-            <div class="chart-stat"><span>Practise</span><strong>Risk Control</strong></div>
-          </div>
-        </div>
+    <div class="market">
+      <div class="market-head">
+        <div class="market-label">MARKET INSIGHTS</div>
+        <span class="demo">ILLUSTRATIVE DATA</span>
       </div>
-    </section>
-
-    <!-- VALUE STRIP -->
-    <section class="container">
-      <div class="stats-strip">
-        <div class="strip-item"><strong>Market Fundamentals</strong><span>Understand the basics</span></div>
-        <div class="strip-item"><strong>Technical Analysis</strong><span>Study charts and trends</span></div>
-        <div class="strip-item"><strong>Risk Management</strong><span>Learn downside awareness</span></div>
-        <div class="strip-item"><strong>Continuous Learning</strong><span>Develop informed habits</span></div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">About VISTOX</span>
-          <h2>Financial education for a <span class="green">changing world.</span></h2>
-          <p>
-            VISTOX Capital Markets is designed as a financial education and
-            market-learning brand. Our learning approach focuses on concepts,
-            analytical thinking, informed decision-making and responsible
-            awareness of financial risk.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="icon-box">⌁</div>
-            <h3>Learn the Fundamentals</h3>
-            <p>Explore market terminology, exchanges, order types, liquidity and the factors that influence price movements.</p>
-          </article>
-          <article class="card">
-            <div class="icon-box">◈</div>
-            <h3>Build Analytical Skills</h3>
-            <p>Study chart structure, trend analysis, support and resistance, indicators and common analytical limitations.</p>
-          </article>
-          <article class="card">
-            <div class="icon-box">◇</div>
-            <h3>Respect Financial Risk</h3>
-            <p>Understand volatility, position sizing, trading psychology, drawdowns and the importance of risk controls.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- MARKETS -->
-    <section class="section courses-bg" id="markets">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Explore Market Categories</span>
-          <h2>One learning destination. <span class="green">Multiple markets.</span></h2>
-          <p>Build foundational knowledge of different asset classes. Availability, access and applicable rules vary by market and jurisdiction.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="icon-box">▥</div>
-            <h3>Stock Market</h3>
-            <p>Learn about shares, equity markets, company fundamentals, market orders, volatility and portfolio concepts.</p>
-            <a class="card-link" href="#courses">Explore learning →</a>
-          </article>
-          <article class="card">
-            <div class="icon-box">⌁</div>
-            <h3>Indices & Derivatives</h3>
-            <p>Understand index construction, futures, options, leverage, expiry and the risks associated with derivatives.</p>
-            <a class="card-link" href="#courses">Explore learning →</a>
-          </article>
-          <article class="card">
-            <div class="icon-box">◉</div>
-            <h3>Commodities</h3>
-            <p>Study commodity-market basics, contract specifications, price drivers and the impact of global events.</p>
-            <a class="card-link" href="#courses">Explore learning →</a>
-          </article>
-          <article class="card">
-            <div class="icon-box">⇄</div>
-            <h3>Currency Markets</h3>
-            <p>Learn exchange-rate terminology, currency pairs and global factors that influence foreign exchange markets.</p>
-            <a class="card-link" href="#courses">Explore learning →</a>
-          </article>
-          <article class="card">
-            <div class="icon-box">₿</div>
-            <h3>Crypto Education</h3>
-            <p>Explore blockchain concepts, digital assets, custody, volatility, security and regulatory risk.</p>
-            <a class="card-link" href="#courses">Explore learning →</a>
-          </article>
-          <article class="card">
-            <div class="icon-box">⌗</div>
-            <h3>Trading Psychology</h3>
-            <p>Learn about discipline, emotional decision-making, overtrading, loss aversion and maintaining a trading journal.</p>
-            <a class="card-link" href="#courses">Explore learning →</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- COURSES -->
-    <section class="section" id="courses">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Learning Programmes</span>
-          <h2>Learn at your own <span class="green">pace.</span></h2>
-          <p>Explore example learning pathways, from beginner fundamentals to advanced market concepts. Final curriculum, pricing and delivery format should be confirmed before enrolment.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card course-card">
-            <div class="course-top"><span class="course-tag">FOUNDATION</span><span class="course-level">Beginner</span></div>
-            <h3>Stock Market Essentials</h3>
-            <p>Understand the structure of equity markets, exchanges, demat accounts, order types and basic financial terminology.</p>
-            <div class="course-meta"><span>● Market basics</span><span>● Risk awareness</span></div>
-            <a class="btn btn-outline full-width" href="#contact" data-course="Stock Market Essentials">Enquire about course ↗</a>
-          </article>
-
-          <article class="card course-card">
-            <div class="course-top"><span class="course-tag">TECHNICAL</span><span class="course-level">Intermediate</span></div>
-            <h3>Technical Analysis</h3>
-            <p>Study candlestick patterns, price action, chart trends, support and resistance, and indicator limitations.</p>
-            <div class="course-meta"><span>● Chart reading</span><span>● Practice concepts</span></div>
-            <a class="btn btn-outline full-width" href="#contact" data-course="Technical Analysis">Enquire about course ↗</a>
-          </article>
-
-          <article class="card course-card">
-            <div class="course-top"><span class="course-tag">STRATEGY</span><span class="course-level">Intermediate</span></div>
-            <h3>Trading Risk Management</h3>
-            <p>Learn position sizing, risk-to-reward concepts, drawdowns, stop-loss mechanics and the role of discipline.</p>
-            <div class="course-meta"><span>● Risk controls</span><span>● Trading journal</span></div>
-            <a class="btn btn-outline full-width" href="#contact" data-course="Trading Risk Management">Enquire about course ↗</a>
-          </article>
-
-          <article class="card course-card">
-            <div class="course-top"><span class="course-tag">FUNDAMENTALS</span><span class="course-level">Intermediate</span></div>
-            <h3>Fundamental Analysis</h3>
-            <p>Understand financial statements, revenue, earnings, valuation ratios and the limitations of historical data.</p>
-            <div class="course-meta"><span>● Company analysis</span><span>● Valuation basics</span></div>
-            <a class="btn btn-outline full-width" href="#contact" data-course="Fundamental Analysis">Enquire about course ↗</a>
-          </article>
-
-          <article class="card course-card">
-            <div class="course-top"><span class="course-tag">DIGITAL ASSETS</span><span class="course-level">Foundation</span></div>
-            <h3>Crypto & Blockchain Basics</h3>
-            <p>Explore blockchain, wallets, private keys, token concepts, custody risks and digital-asset security.</p>
-            <div class="course-meta"><span>● Blockchain basics</span><span>● Security awareness</span></div>
-            <a class="btn btn-outline full-width" href="#contact" data-course="Crypto and Blockchain Basics">Enquire about course ↗</a>
-          </article>
-
-          <article class="card course-card">
-            <div class="course-top"><span class="course-tag">PRACTICE</span><span class="course-level">All levels</span></div>
-            <h3>Trading Psychology</h3>
-            <p>Explore decision-making biases, emotional control, consistency and structured post-trade review.</p>
-            <div class="course-meta"><span>● Discipline</span><span>● Journaling</span></div>
-            <a class="btn btn-outline full-width" href="#contact" data-course="Trading Psychology">Enquire about course ↗</a>
-          </article>
-        </div>
-
-        <div class="course-note muted">
-          <strong style="color:#d9e8de">Course information:</strong>
-          These are proposed educational programmes, not a claim that courses are already available. Confirm the actual syllabus, instructor credentials, schedule, fees and delivery method before publishing enrolment details.
-        </div>
-      </div>
-    </section>
-
-    <!-- PROCESS -->
-    <section class="section courses-bg">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Our Learning Approach</span>
-          <h2>From curiosity to <span class="green">understanding.</span></h2>
-          <p>A structured learning journey that prioritises concepts, practice and awareness of risk.</p>
-        </div>
-
-        <div class="steps">
-          <article class="step">
-            <div class="step-num">STEP 01</div>
-            <h3>Understand</h3>
-            <p>Start with market structure, terminology and essential financial concepts.</p>
-          </article>
-          <article class="step">
-            <div class="step-num">STEP 02</div>
-            <h3>Analyse</h3>
-            <p>Study charts, price movements, financial data and relevant limitations.</p>
-          </article>
-          <article class="step">
-            <div class="step-num">STEP 03</div>
-            <h3>Practise</h3>
-            <p>Use hypothetical examples and paper-trading exercises to practise concepts.</p>
-          </article>
-          <article class="step">
-            <div class="step-num">STEP 04</div>
-            <h3>Review</h3>
-            <p>Reflect on decisions, errors, risk exposure and learning progress.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- RISK -->
-    <section class="section" id="risk">
-      <div class="container risk-layout">
-        <div class="risk-copy">
-          <span class="eyebrow">Responsible Learning</span>
-          <h2>Knowledge first. <span class="green">Risk always.</span></h2>
-          <p>Financial markets involve uncertainty. Education can help explain market mechanics, but it cannot eliminate losses or guarantee a particular outcome.</p>
-          <p>Our proposed learning framework puts risk awareness alongside market concepts, rather than treating it as an afterthought.</p>
-          <ul class="risk-list">
-            <li>Understand leverage and volatility before studying complex products.</li>
-            <li>Learn why position sizing matters.</li>
-            <li>Recognise that past performance does not guarantee future results.</li>
-            <li>Understand the difference between education and personalised advice.</li>
-          </ul>
-        </div>
-
-        <div class="risk-box">
-          <h3>Essential concepts to understand</h3>
-          <div class="risk-row"><span>Market volatility</span><strong>Price fluctuations</strong></div>
-          <div class="risk-row"><span>Capital risk</span><strong>Possible financial loss</strong></div>
-          <div class="risk-row"><span>Leverage</span><strong>Amplified exposure</strong></div>
-          <div class="risk-row"><span>Risk management</span><strong>Planning and controls</strong></div>
-          <div class="risk-row"><span>Trading psychology</span><strong>Disciplined decisions</strong></div>
-          <p style="font-size:11px;margin-top:18px">Educational concepts only. This section does not provide a personalised trading strategy or recommend a specific financial product.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- RESOURCES -->
-    <section class="section courses-bg" id="resources">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Knowledge Centre</span>
-          <h2>Explore financial <span class="green">knowledge.</span></h2>
-          <p>Use these learning topics as a starting point for building a deeper understanding of financial markets.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card resource-card">
-            <div class="resource-label">BEGINNER GUIDE</div>
-            <h3>How the Stock Market Works</h3>
-            <p>Learn about exchanges, listed companies, buyers, sellers and price discovery.</p>
-            <a class="card-link" href="https://investor.sebi.gov.in/" target="_blank" rel="noopener noreferrer">Explore investor education ↗</a>
-          </article>
-          <article class="card resource-card">
-            <div class="resource-label">ANALYSIS</div>
-            <h3>Introduction to Technical Analysis</h3>
-            <p>Learn how charts represent price and volume, and why indicators are not guarantees.</p>
-            <a class="card-link" href="#courses" data-course="Technical Analysis">Explore learning topics →</a>
-          </article>
-          <article class="card resource-card">
-            <div class="resource-label">RISK AWARENESS</div>
-            <h3>Recognising Investment Scams</h3>
-            <p>Understand warning signs such as guaranteed returns, fake trading apps and pressure tactics.</p>
-            <a class="card-link" href="https://investor.sebi.gov.in/" target="_blank" rel="noopener noreferrer">Visit SEBI Investor ↗</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="container faq-wrap">
-        <div class="section-head">
-          <span class="eyebrow">Frequently Asked Questions</span>
-          <h2>Questions, <span class="green">answered.</span></h2>
-          <p>Learn more about the proposed VISTOX education platform.</p>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false"><span>Is VISTOX suitable for beginners?</span><span>+</span></button>
-          <div class="faq-answer"><p>The proposed foundation courses are intended to explain market terminology and concepts in a structured way. Confirm course availability and prerequisites with the team before enrolling.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false"><span>Does VISTOX guarantee profits?</span><span>+</span></button>
-          <div class="faq-answer"><p>No. Financial markets involve risk. No educational programme can guarantee trading profits or eliminate the possibility of loss.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false"><span>Can I learn about cryptocurrency?</span><span>+</span></button>
-          <div class="faq-answer"><p>The proposed crypto learning pathway covers blockchain concepts, wallets, custody, security and volatility. Digital assets may involve substantial risk and regulatory restrictions.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false"><span>Are the charts and prices on this website live?</span><span>+</span></button>
-          <div class="faq-answer"><p>No. The chart shown on this version is an illustrative visual, not a live market feed. No real-time prices or trading signals are supplied by this page.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false"><span>How can I enquire about a course?</span><span>+</span></button>
-          <div class="faq-answer"><p>Use the enquiry form below. Before publishing, the website owner must configure the correct contact email address or connect a working enquiry service.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" aria-expanded="false"><span>Does this website execute trades or provide personalised investment advice?</span><span>+</span></button>
-          <div class="faq-answer"><p>No. This starter website is an educational frontend. It does not connect to a broker, execute orders, manage client funds or provide personalised investment advice.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="contact-box">
-          <div class="contact-info">
-            <span class="eyebrow">Get In Touch</span>
-            <h2>Start your market-learning journey.</h2>
-            <p>Interested in learning about stock markets, technical analysis or digital assets? Send an enquiry to discuss course availability.</p>
-
-            <div class="contact-point">
-              <strong>✉ Email</strong>
-              <span>Replace with your official business email</span>
-            </div>
-            <div class="contact-point">
-              <strong>◷ Enquiry hours</strong>
-              <span>Add your actual business hours</span>
-            </div>
-            <div class="contact-point">
-              <strong>⌖ Location</strong>
-              <span>Add your verified business address, if applicable</span>
-            </div>
-            <p style="font-size:11px">Please do not submit bank passwords, OTPs, broker login credentials or other sensitive financial information.</p>
-          </div>
-
-          <div class="contact-form">
-            <h3>Course Enquiry</h3>
-            <form id="enquiryForm">
-              <div class="form-grid">
-                <div class="field">
-                  <label for="fullName">Full name *</label>
-                  <input id="fullName" name="fullName" type="text" autocomplete="name" required maxlength="100" placeholder="Your name">
-                </div>
-                <div class="field">
-                  <label for="email">Email address *</label>
-                  <input id="email" name="email" type="email" autocomplete="email" required maxlength="150" placeholder="you@example.com">
-                </div>
-                <div class="field">
-                  <label for="phone">Phone number</label>
-                  <input id="phone" name="phone" type="tel" autocomplete="tel" maxlength="25" placeholder="Your contact number">
-                </div>
-                <div class="field">
-                  <label for="course">Learning interest *</label>
-                  <select id="course" name="course" required>
-                    <option value="">Select a topic</option>
-                    <option>Stock Market Essentials</option>
-                    <option>Technical Analysis</option>
-                    <option>Trading Risk Management</option>
-                    <option>Fundamental Analysis</option>
-                    <option>Crypto and Blockchain Basics</option>
-                    <option>Trading Psychology</option>
-                    <option>Other enquiry</option>
-                  </select>
-                </div>
-                <div class="field full">
-                  <label for="message">Your message</label>
-                  <textarea id="message" name="message" maxlength="1500" placeholder="Tell us what you would like to learn"></textarea>
-                </div>
-                <div class="field full">
-                  <label style="display:flex;align-items:flex-start;gap:10px;font-weight:500">
-                    <input type="checkbox" id="consent" required style="width:auto;margin-top:5px">
-                    <span>I agree to use my details for responding to this enquiry and have read the applicable privacy policy.</span>
-                  </label>
-                </div>
-                <div class="field full">
-                  <button type="submit" class="btn btn-primary full-width">Prepare Enquiry Email ↗</button>
-                  <p class="form-help">This starter form opens your email application. It does not automatically store or transmit enquiries to a server.</p>
-                  <div id="formToast" class="toast" role="status"></div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="section">
-      <div class="container">
-        <div class="cta">
-          <span class="eyebrow">VISTOX CAPITAL MARKETS</span>
-          <h2>Build knowledge before making <span class="green">decisions.</span></h2>
-          <p>Explore financial concepts, develop analytical skills and understand the risks that come with market participation.</p>
-          <a href="#courses" class="btn btn-primary">Explore Learning Programmes ↗</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-about">
-          <a class="brand" href="#home">
-            <span class="brand-mark">V</span>
-            <span>
-              <span class="brand-name">VISTOX</span>
-              <span class="brand-sub">CAPITAL MARKETS</span>
-            </span>
-          </a>
-          <p>A proposed financial education brand focused on market fundamentals, analytical skills and risk awareness.</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Explore</h4>
-          <a href="#about">About VISTOX</a>
-          <a href="#markets">Market Categories</a>
-          <a href="#courses">Learning Programmes</a>
-          <a href="#resources">Knowledge Centre</a>
-        </div>
-
-        <div class="footer-col">
-          <h4>Information</h4>
-          <a href="#risk">Risk Disclosure</a>
-          <a href="#privacy" id="privacyLink">Privacy Notice</a>
-          <a href="#terms" id="termsLink">Terms of Use</a>
-          <a href="#contact">Contact</a>
-        </div>
-
-        <div class="footer-col">
-          <h4>Investor Resources</h4>
-          <a href="https://investor.sebi.gov.in/" target="_blank" rel="noopener noreferrer">SEBI Investor ↗</a>
-          <a href="https://www.sebi.gov.in/" target="_blank" rel="noopener noreferrer">SEBI Official Website ↗</a>
-          <a href="https://www.nseindia.com/" target="_blank" rel="noopener noreferrer">NSE Official Website ↗</a>
-          <a href="https://www.bseindia.com/" target="_blank" rel="noopener noreferrer">BSE Official Website ↗</a>
-        </div>
-      </div>
-
-      <div class="disclaimer">
-        <strong>Important risk disclosure:</strong>
-        This website is an educational frontend template. Its content is for general
-        information and learning purposes only and is not a recommendation to buy,
-        sell or hold any security, derivative or digital asset. Markets can be volatile
-        and losses, including substantial losses, are possible. No returns or profits
-        are promised. Illustrative graphics are not live market data. Any investment
-        advisory, research, brokerage, execution or other regulated service must only
-        be offered where legally permitted and after verifying applicable registration,
-        licensing and compliance requirements. Do not publish any unverified
-        registration claim. Cryptoasset rules and risks may differ by jurisdiction.
-      </div>
-
-      <div class="footer-bottom">
-        <p>© <span id="year"></span> VISTOX Capital Markets. All rights reserved.</p>
-        <p>Learn responsibly. Understand risk. Make informed decisions.</p>
+      <div class="chart-title">Understanding Price Action</div>
+      <p class="chart-sub">An educational example of market movement</p>
+      <svg class="chart" viewBox="0 0 500 260" role="img" aria-label="Illustrative candlestick chart, not live market prices">
+        <defs>
+          <linearGradient id="fill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#E64553" stop-opacity=".25"/>
+            <stop offset="100%" stop-color="#E64553" stop-opacity="0"/>
+          </linearGradient>
+        </defs>
+        <g stroke="#ffffff" stroke-opacity=".09" stroke-width="1">
+          <path d="M0 30H500M0 75H500M0 120H500M0 165H500M0 210H500M50 0V260M125 0V260M200 0V260M275 0V260M350 0V260M425 0V260"/>
+        </g>
+        <path d="M0 200L30 180L55 195L85 143L115 157L145 115L175 130L205 88L235 104L265 62L295 84L325 44L355 69L385 37L415 54L450 23L480 40L500 18V260H0Z" fill="url(#fill)"/>
+        <path d="M0 200L30 180L55 195L85 143L115 157L145 115L175 130L205 88L235 104L265 62L295 84L325 44L355 69L385 37L415 54L450 23L480 40L500 18" fill="none" stroke="#E64553" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+        <g stroke-width="2">
+          <path d="M30 150V205M45 166V195M80 130V170M100 123V155M135 95V139M155 105V142M190 68V112M215 80V120M250 48V88M275 53V95M310 29V67M335 35V78M370 20V55M395 23V60M430 8V39M455 15V49" stroke="#E64553"/>
+          <g fill="#E64553">
+            <rect x="25" y="164" width="10" height="25"/><rect x="75" y="139" width="10" height="21"/>
+            <rect x="130" y="104" width="10" height="23"/><rect x="185" y="77" width="10" height="22"/>
+            <rect x="245" y="55" width="10" height="23"/><rect x="305" y="35" width="10" height="19"/>
+            <rect x="365" y="25" width="10" height="18"/><rect x="425" y="14" width="10" height="18"/>
+          </g>
+        </g>
+      </svg>
+      <div class="legend"><span>Illustrative chart</span><span>Not a live feed</span></div>
+      <div class="chart-stats">
+        <div class="chart-stat"><span>01 / LEARN</span><strong>Fundamentals</strong></div>
+        <div class="chart-stat"><span>02 / ANALYSE</span><strong>Price Action</strong></div>
+        <div class="chart-stat"><span>03 / MANAGE</span><strong>Risk Control</strong></div>
       </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <!-- Replace 91XXXXXXXXXX with your WhatsApp number including country code. -->
-  <a class="whatsapp"
-     href="https://wa.me/91XXXXXXXXXX"
-     target="_blank"
-     rel="noopener noreferrer"
-     aria-label="Contact VISTOX on WhatsApp"
-     title="WhatsApp — configure your number first">WA</a>
+<div class="container">
+  <div class="strip">
+    <div><strong>Financial Markets</strong><span>Understand the structure</span></div>
+    <div><strong>Technical Analysis</strong><span>Study price behaviour</span></div>
+    <div><strong>Risk Management</strong><span>Understand uncertainty</span></div>
+    <div><strong>Market Psychology</strong><span>Build disciplined habits</span></div>
+  </div>
+</div>
 
-  <script>
-    // MOBILE NAVIGATION
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+<section class="section" id="about">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow">The VISTOX Approach</span>
+      <h2>Built around knowledge. <span class="red">Driven by discipline.</span></h2>
+      <p>A modern financial education concept focused on helping learners understand how markets work, how to analyse information and why managing risk matters.</p>
+    </div>
+    <div class="grid3">
+      <article class="card"><div class="icon">◈</div><h3>Learn the Fundamentals</h3><p>Explore equity markets, market terminology, order types, company information and essential financial concepts.</p></article>
+      <article class="card"><div class="icon">⌁</div><h3>Develop Analytical Thinking</h3><p>Study chart structures, trends, technical indicators and the limitations of market analysis.</p></article>
+      <article class="card"><div class="icon">◇</div><h3>Understand Risk</h3><p>Learn about volatility, leverage, position sizing, drawdowns and trading psychology.</p></article>
+    </div>
+  </div>
+</section>
 
-    menuToggle.addEventListener("click", function () {
-      const isOpen = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.textContent = isOpen ? "×" : "☰";
+<section class="section dark-section" id="markets">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow">Market Categories</span>
+      <h2>Explore a world of <span class="red">financial markets.</span></h2>
+      <p>Build foundational knowledge across different asset classes. Access, regulations and risks vary by product and jurisdiction.</p>
+    </div>
+    <div class="grid3">
+      <article class="card"><div class="icon">▥</div><h3>Stock Market</h3><p>Learn about shares, exchanges, company fundamentals, equity valuation and market mechanics.</p><a class="arrow" href="#courses">Explore learning ↗</a></article>
+      <article class="card"><div class="icon">⌗</div><h3>Indices & Derivatives</h3><p>Understand indices, futures, options, expiry, leverage and the risks of complex products.</p><a class="arrow" href="#courses">Explore learning ↗</a></article>
+      <article class="card"><div class="icon">◉</div><h3>Commodities</h3><p>Study commodity markets, contract specifications and factors that influence prices.</p><a class="arrow" href="#courses">Explore learning ↗</a></article>
+      <article class="card"><div class="icon">⇄</div><h3>Currency Markets</h3><p>Explore exchange rates, currency pairs and international market fundamentals.</p><a class="arrow" href="#courses">Explore learning ↗</a></article>
+      <article class="card"><div class="icon">₿</div><h3>Crypto & Blockchain</h3><p>Understand digital assets, blockchain technology, wallet security and cryptoasset risks.</p><a class="arrow" href="#courses">Explore learning ↗</a></article>
+      <article class="card"><div class="icon">◷</div><h3>Trading Psychology</h3><p>Learn about discipline, emotional biases, overtrading and maintaining a learning journal.</p><a class="arrow" href="#courses">Explore learning ↗</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="courses">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow">Education & Learning</span>
+      <h2>Knowledge that builds <span class="red">perspective.</span></h2>
+      <p>Proposed learning pathways for different experience levels. Confirm the actual syllabus, instructors, schedule and fees before accepting enrolments.</p>
+    </div>
+    <div class="grid3">
+      <article class="card course-card"><div class="course-top"><span class="tag">FOUNDATION</span><span class="level">Beginner</span></div><h3>Stock Market Essentials</h3><p>Learn market structure, exchanges, order types and equity-market fundamentals.</p><div class="course-meta">Market basics · Financial terminology</div><a href="#contact" data-course="Stock Market Essentials" class="btn outline full">Enquire about course ↗</a></article>
+      <article class="card course-card"><div class="course-top"><span class="tag">TECHNICAL</span><span class="level">Intermediate</span></div><h3>Technical Analysis</h3><p>Explore candlestick charts, trends, support and resistance, and technical indicators.</p><div class="course-meta">Chart reading · Analytical concepts</div><a href="#contact" data-course="Technical Analysis" class="btn outline full">Enquire about course ↗</a></article>
+      <article class="card course-card"><div class="course-top"><span class="tag">RISK</span><span class="level">All levels</span></div><h3>Trading Risk Management</h3><p>Understand exposure, position sizing, leverage, drawdowns and risk controls.</p><div class="course-meta">Risk awareness · Discipline</div><a href="#contact" data-course="Trading Risk Management" class="btn outline full">Enquire about course ↗</a></article>
+      <article class="card course-card"><div class="course-top"><span class="tag">FUNDAMENTAL</span><span class="level">Intermediate</span></div><h3>Fundamental Analysis</h3><p>Study financial statements, earnings, valuation ratios and company performance.</p><div class="course-meta">Financial statements · Valuation</div><a href="#contact" data-course="Fundamental Analysis" class="btn outline full">Enquire about course ↗</a></article>
+      <article class="card course-card"><div class="course-top"><span class="tag">DIGITAL ASSETS</span><span class="level">Foundation</span></div><h3>Crypto & Blockchain Basics</h3><p>Explore distributed ledgers, wallets, custody, security and digital-asset volatility.</p><div class="course-meta">Blockchain · Security concepts</div><a href="#contact" data-course="Crypto and Blockchain Basics" class="btn outline full">Enquire about course ↗</a></article>
+      <article class="card course-card"><div class="course-top"><span class="tag">MINDSET</span><span class="level">All levels</span></div><h3>Trading Psychology</h3><p>Understand decision-making biases, consistency and structured post-trade review.</p><div class="course-meta">Discipline · Journaling</div><a href="#contact" data-course="Trading Psychology" class="btn outline full">Enquire about course ↗</a></article>
+    </div>
+    <div class="notice">These programmes are example offerings for the website design. Publish only courses you actually provide, with accurate pricing and course details.</div>
+  </div>
+</section>
+
+<section class="section dark-section">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow">The Learning Framework</span>
+      <h2>From learning to <span class="red">understanding.</span></h2>
+      <p>A clear process for developing financial knowledge without promising outcomes.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="step-no">STEP 01</span><h3>Understand</h3><p>Learn essential concepts and market terminology.</p></div>
+      <div class="step"><span class="step-no">STEP 02</span><h3>Analyse</h3><p>Study charts, data and relevant market factors.</p></div>
+      <div class="step"><span class="step-no">STEP 03</span><h3>Practise</h3><p>Use hypothetical examples and paper-trading exercises.</p></div>
+      <div class="step"><span class="step-no">STEP 04</span><h3>Review</h3><p>Reflect on decisions, risk and learning progress.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="insights">
+  <div class="container">
+    <div class="head">
+      <span class="eyebrow">Knowledge Centre</span>
+      <h2>Perspective beyond the <span class="red">price chart.</span></h2>
+      <p>Useful starting points for learning about financial markets and investor awareness.</p>
+    </div>
+    <div class="grid3">
+      <article class="card"><div class="tag">MARKET BASICS</div><h3 style="margin-top:18px">How Stock Markets Work</h3><p>Explore exchanges, listed companies, buyers, sellers and price discovery.</p><a class="arrow" href="https://investor.sebi.gov.in/" target="_blank" rel="noopener noreferrer">SEBI Investor Education ↗</a></article>
+      <article class="card"><div class="tag">ANALYSIS</div><h3 style="margin-top:18px">Understanding Technical Analysis</h3><p>Learn how charts represent price behaviour and why indicators have limitations.</p><a class="arrow" href="#courses">Explore course topics →</a></article>
+      <article class="card"><div class="tag">AWARENESS</div><h3 style="margin-top:18px">Recognising Financial Scams</h3><p>Understand warning signs, false promises and the importance of verifying providers.</p><a class="arrow" href="https://investor.sebi.gov.in/" target="_blank" rel="noopener noreferrer">Investor Resources ↗</a></article>
+    </div>
+  </div>
+</section>
+
+<section class="section dark-section" id="risk">
+  <div class="container risk-grid">
+    <div>
+      <span class="eyebrow">Responsible Market Education</span>
+      <h2>Capital awareness. <span class="red">Risk discipline.</span></h2>
+      <p style="margin-top:20px;font-size:14px">Financial markets involve uncertainty. Education can explain market mechanics, but it cannot eliminate risk or guarantee a particular result.</p>
+      <ul class="risk-list">
+        <li>Understand volatility before studying complex products.</li>
+        <li>Learn the basics of position sizing and exposure.</li>
+        <li>Recognise that past performance does not guarantee future results.</li>
+        <li>Understand the distinction between education and investment advice.</li>
+      </ul>
+    </div>
+    <div class="risk-box">
+      <h3>Essential Market Concepts</h3>
+      <div class="risk-row"><span>Volatility</span><strong>Price fluctuations</strong></div>
+      <div class="risk-row"><span>Leverage</span><strong>Amplified exposure</strong></div>
+      <div class="risk-row"><span>Capital risk</span><strong>Possible financial loss</strong></div>
+      <div class="risk-row"><span>Risk controls</span><strong>Planning and limits</strong></div>
+      <div class="risk-row"><span>Trading psychology</span><strong>Disciplined decisions</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container faq">
+    <div class="head">
+      <span class="eyebrow">Frequently Asked Questions</span>
+      <h2>Questions, <span class="red">answered.</span></h2>
+    </div>
+    <div class="faq-item"><button class="question" aria-expanded="false"><span>Is VISTOX suitable for beginners?</span><span>+</span></button><div class="answer"><p>The proposed foundation pathway is designed to explain market concepts step by step. Confirm actual course availability before enrolling.</p></div></div>
+    <div class="faq-item"><button class="question" aria-expanded="false"><span>Does VISTOX guarantee trading profits?</span><span>+</span></button><div class="answer"><p>No. Markets involve risk. No course or educational resource can guarantee profits or prevent losses.</p></div></div>
+    <div class="faq-item"><button class="question" aria-expanded="false"><span>Are the charts live?</span><span>+</span></button><div class="answer"><p>No. Charts on this template are illustrative only. A live market feed requires a separately configured data provider and appropriate permissions.</p></div></div>
+    <div class="faq-item"><button class="question" aria-expanded="false"><span>Can I learn about crypto?</span><span>+</span></button><div class="answer"><p>The proposed learning pathway covers blockchain, digital assets, custody, security and volatility. Digital assets carry significant risks and may be subject to regulatory restrictions.</p></div></div>
+    <div class="faq-item"><button class="question" aria-expanded="false"><span>Does this site execute trades?</span><span>+</span></button><div class="answer"><p>No. This website is a frontend for educational content and enquiries. It does not execute trades, hold customer funds or connect to a brokerage account.</p></div></div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <div class="contact">
+      <div class="contact-info">
+        <span class="eyebrow">Connect With VISTOX</span>
+        <h2>Begin your learning journey.</h2>
+        <p>Send an enquiry about the proposed financial education programmes and learning topics.</p>
+        <div class="contact-point"><strong>Email</strong><span>Replace with your official business email</span></div>
+        <div class="contact-point"><strong>Business hours</strong><span>Add your actual availability</span></div>
+        <div class="contact-point"><strong>Business location</strong><span>Add verified details if applicable</span></div>
+        <p style="font-size:11px;margin-top:25px">Never share OTPs, bank passwords or broker login credentials.</p>
+      </div>
+      <div class="contact-form">
+        <h3>Course Enquiry</h3>
+        <form id="enquiryForm">
+          <div class="form-grid">
+            <div class="field"><label for="name">Full name *</label><input id="name" name="name" required maxlength="100" autocomplete="name" placeholder="Your name"></div>
+            <div class="field"><label for="email">Email address *</label><input id="email" name="email" type="email" required maxlength="150" autocomplete="email" placeholder="you@example.com"></div>
+            <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" maxlength="25" placeholder="Contact number"></div>
+            <div class="field"><label for="course">Learning interest *</label><select id="course" name="course" required><option value="">Choose a topic</option><option>Stock Market Essentials</option><option>Technical Analysis</option><option>Trading Risk Management</option><option>Fundamental Analysis</option><option>Crypto and Blockchain Basics</option><option>Trading Psychology</option><option>Other enquiry</option></select></div>
+            <div class="field full"><label for="message">Message</label><textarea id="message" name="message" maxlength="1500" placeholder="What would you like to learn?"></textarea></div>
+            <div class="field full"><label style="display:flex;align-items:flex-start;gap:9px;font-weight:400"><input type="checkbox" id="consent" required style="width:auto;margin-top:5px"><span>I agree to have my details used to respond to this enquiry, subject to the applicable privacy notice.</span></label></div>
+            <div class="field full"><button class="btn primary full" type="submit">Prepare Enquiry Email ↗</button><p class="help">This form opens your email application; it does not save enquiries to a database.</p><div class="toast" id="toast" role="status"></div></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container cta">
+    <span class="eyebrow">VISTOX CAPITAL MARKETS</span>
+    <h2>Make knowledge your <span class="red">foundation.</span></h2>
+    <p>Explore financial concepts, improve analytical understanding and learn to respect market risk.</p>
+    <a class="btn primary" href="#courses">Explore Education ↗</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-about">
+        <a class="brand" href="#home"><span class="logo">V</span><span><span class="brand-name">VISTOX</span><span class="brand-sub">CAPITAL MARKETS</span></span></a>
+        <p>A financial education brand concept focused on market knowledge, analytical thinking and risk awareness.</p>
+      </div>
+      <div class="footer-col"><h4>Explore</h4><a href="#about">About</a><a href="#markets">Markets</a><a href="#courses">Education</a><a href="#insights">Insights</a></div>
+      <div class="footer-col"><h4>Information</h4><a href="#risk">Risk Disclosure</a><a href="#privacy">Privacy Policy</a><a href="#terms">Terms of Use</a><a href="#contact">Contact</a></div>
+      <div class="footer-col"><h4>Official Resources</h4><a href="https://investor.sebi.gov.in/" target="_blank" rel="noopener noreferrer">SEBI Investor ↗</a><a href="https://www.sebi.gov.in/" target="_blank" rel="noopener noreferrer">SEBI ↗</a><a href="https://www.nseindia.com/" target="_blank" rel="noopener noreferrer">NSE ↗</a><a href="https://www.bseindia.com/" target="_blank" rel="noopener noreferrer">BSE ↗</a></div>
+    </div>
+    <div class="disclaimer"><strong>Risk disclosure:</strong> This website provides general educational information only. It is not an offer or recommendation to buy, sell or hold a financial instrument, and is not personalised investment advice. Financial markets involve risk, and losses are possible. No returns are promised. Charts are illustrative, not live data. Regulated advisory, research, brokerage or trading services must only be offered where legally permitted and after verifying all applicable registration and compliance requirements. Do not publish unverified registration claims. Cryptocurrency products involve additional risks.</div>
+    <div class="bottom"><p>© <span id="year"></span> VISTOX Capital Markets. All rights reserved.</p><p>Market knowledge. Responsible learning.</p></div>
+  </div>
+</footer>
+
+<!-- Replace the placeholder number with your real WhatsApp number. -->
+<a class="wa" href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">WA</a>
+
+<script>
+const menuBtn=document.getElementById("menuBtn");
+const navLinks=document.getElementById("navLinks");
+menuBtn.addEventListener("click",()=>{
+  const open=navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded",String(open));
+  menuBtn.textContent=open?"×":"☰";
+});
+navLinks.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{
+  navLinks.classList.remove("open");
+  menuBtn.setAttribute("aria-expanded","false");
+  menuBtn.textContent="☰";
+}));
+
+document.querySelectorAll(".question").forEach(button=>{
+  button.addEventListener("click",()=>{
+    const item=button.closest(".faq-item");
+    const open=item.classList.toggle("open");
+    button.setAttribute("aria-expanded",String(open));
+  });
+});
+
+document.querySelectorAll("[data-course]").forEach(link=>{
+  link.addEventListener("click",()=>{
+    const select=document.getElementById("course");
+    const value=link.dataset.course;
+    Array.from(select.options).forEach(option=>{
+      if(option.text===value)select.value=option.value;
     });
+  });
+});
 
-    navLinks.querySelectorAll("a").forEach(function (link) {
-      link.addEventListener("click", function () {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.textContent = "☰";
-      });
-    });
+document.getElementById("year").textContent=new Date().getFullYear();
 
-    // FAQ ACCORDION
-    document.querySelectorAll(".faq-question").forEach(function (button) {
-      button.addEventListener("click", function () {
-        const item = button.closest(".faq-item");
-        const isOpen = item.classList.toggle("open");
-        button.setAttribute("aria-expanded", String(isOpen));
-      });
-    });
+// Set your real business email before publishing.
+const BUSINESS_EMAIL="YOUR_EMAIL@example.com";
 
-    // COURSE BUTTONS PRESELECT A COURSE IN THE FORM
-    document.querySelectorAll("[data-course]").forEach(function (link) {
-      link.addEventListener("click", function () {
-        const course = document.getElementById("course");
-        const requested = link.getAttribute("data-course");
+document.getElementById("enquiryForm").addEventListener("submit",event=>{
+  event.preventDefault();
+  const form=event.currentTarget;
+  if(!form.reportValidity())return;
+  const toast=document.getElementById("toast");
 
-        Array.from(course.options).forEach(function (option) {
-          if (option.text === requested) {
-            course.value = option.value;
-          }
-        });
-      });
-    });
+  if(BUSINESS_EMAIL==="YOUR_EMAIL@example.com"){
+    toast.style.display="block";
+    toast.textContent="Website setup required: replace BUSINESS_EMAIL with your real business email in index.html.";
+    return;
+  }
 
-    // CURRENT YEAR
-    document.getElementById("year").textContent = new Date().getFullYear();
+  const data=new FormData(form);
+  const subject="VISTOX Course Enquiry - "+data.get("course");
+  const body=[
+    "VISTOX Capital Markets enquiry",
+    "Name: "+data.get("name"),
+    "Email: "+data.get("email"),
+    "Phone: "+(data.get("phone")||"Not provided"),
+    "Learning interest: "+data.get("course"),
+    "Message: "+(data.get("message")||"None")
+  ].join("\n");
 
-    // CONTACT FORM
-    // Replace this placeholder with your real business email before publishing.
-    const BUSINESS_EMAIL = "YOUR_EMAIL@example.com";
+  toast.style.display="block";
+  toast.textContent="Your email application will open. Send the prepared email to complete your enquiry.";
+  window.location.href="mailto:"+BUSINESS_EMAIL+"?subject="+encodeURIComponent(subject)+"&body="+encodeURIComponent(body);
+});
 
-    const form = document.getElementById("enquiryForm");
-    const toast = document.getElementById("formToast");
-
-    form.addEventListener("submit", function (event) {
-      event.preventDefault();
-
-      if (!form.reportValidity()) return;
-
-      if (BUSINESS_EMAIL === "YOUR_EMAIL@example.com") {
-        toast.style.display = "block";
-        toast.textContent =
-          "Website owner: edit index.html and set BUSINESS_EMAIL to your real business email before accepting enquiries.";
-        return;
-      }
-
-      const data = new FormData(form);
-      const subject = "VISTOX Course Enquiry — " + data.get("course");
-
-      const body = [
-        "New course enquiry for VISTOX Capital Markets",
-        "",
-        "Name: " + data.get("fullName"),
-        "Email: " + data.get("email"),
-        "Phone: " + (data.get("phone") || "Not provided"),
-        "Learning interest: " + data.get("course"),
-        "",
-        "Message:",
-        data.get("message") || "No additional message",
-        "",
-        "Consent provided on the enquiry form."
-      ].join("\n");
-
-      toast.style.display = "block";
-      toast.textContent =
-        "Your email application should open with the enquiry details. Please send the email to complete the enquiry.";
-
-      window.location.href =
-        "mailto:" + BUSINESS_EMAIL +
-        "?subject=" + encodeURIComponent(subject) +
-        "&body=" + encodeURIComponent(body);
-    });
-
-    // Temporary policy notices: replace these with proper policy pages before launch.
-    document.getElementById("privacyLink").addEventListener("click", function (event) {
-      event.preventDefault();
-      alert("Website owner: publish a privacy policy explaining data collection, purposes, retention, sharing, security and contact details before collecting personal information.");
-    });
-
-    document.getElementById("termsLink").addEventListener("click", function (event) {
-      event.preventDefault();
-      alert("Website owner: publish actual terms of use, course conditions, fees, cancellation/refund rules and applicable legal disclosures before launch.");
-    });
-  </script>
+// Publish actual privacy and terms pages before collecting personal data.
+document.querySelectorAll('a[href="#privacy"],a[href="#terms"]').forEach(link=>{
+  link.addEventListener("click",event=>{
+    event.preventDefault();
+    alert("Please publish the actual privacy policy or terms of use before launching this website.");
+  });
+});
+</script>
 </body>
 </html>
-
